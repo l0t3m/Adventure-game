@@ -3,13 +3,8 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private float speed;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+  
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 movement = Vector3.zero;
@@ -33,6 +28,8 @@ public class PlayerManager : MonoBehaviour
         transform.position += movement * speed * Time.deltaTime;
     }
 
+
+    // assign the collided game object to the collision event, then call it
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameManager.Instance.EventHandler.DoLogic("collision", collision.gameObject);
