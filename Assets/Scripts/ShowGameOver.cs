@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class ShowGameOver : MonoBehaviour
 {
-    [SerializeField] GameObject UIPanel;
+    [SerializeField] GameObject GameOverPanel;
     [SerializeField] TextMeshProUGUI scoreText;
 
     public void GameOver(int score)
     {
-        UIPanel.SetActive(true);
+        GameOverPanel.SetActive(true);
         scoreText.text = "Score: " + score;
     }
 }
